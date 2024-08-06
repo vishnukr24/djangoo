@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,8 @@
 <body style='background-color:DodgerBlue'>
     <h1> Welcome to About Page</h1>
     <a href="{% url 'home' %}">Index Page</a>
-    <a href="about">About Page</a>
+    <a href="{% url 'about' %}">About Page</a>
+    <a href="{% url 'show' %}">Show Page</a>
+   
 </body>
 </html>
