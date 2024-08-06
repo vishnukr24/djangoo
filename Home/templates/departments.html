@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for i in dept %}
+<h2>{{ i.dept_name }}</h2>
+<h2>{{ i.dept_description }}</h2>
+
+{% endfor %}
+
+<table border='2'>
+    <tbody>
+        {% for i in dept %}
+        <tr>
+        <td>{{ i.dept_name }}</td>
+        <td>{{ i.dept_description }}</td>
+    </tr>
+        {% endfor %} 
+    </tbody>
+</table>
+{% endblock content %}

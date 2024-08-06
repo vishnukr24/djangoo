@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, render
-
+from . models import department, Doctor
 app_name = 'home'
 # Create your views here.
 def index(request):
@@ -26,3 +26,25 @@ def show(request):
 
 def demo(request):
     return render (request, 'demo.html')
+
+
+
+def dept(request):
+    dic_dept = {
+        'dept':department.objects.all()
+    }
+    return render (request, 'departments.html', dic_dept)
+
+
+def doctor(request):
+    doctor = {
+        'doctor':Doctor.objects.all()
+    }
+    return render (request, 'doctor.html', doctor)
+
+
+def booking(request):
+    doctor = {
+        'doctor':Doctor.objects.all()
+    }
+    return render (request, 'doctor.html', doctor)

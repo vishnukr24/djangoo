@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<table border='2' bg>
+    <tbody>
+        <th>Name</th>
+        <th>Specialisation</th>
+        <th>Department</th>
+        <th>Image</th>
+        {% for i in doctor %}
+        <tr>
+        <td>{{ i.doc_name }}</td>
+        <td>{{ i.doc_specialisation }}</td>
+        <td>{{ i.dept_name }}</td>
+        <td><img src="{{ i.doc_image.url }}" alt=""></td>
+    </tr>
+        {% endfor %} 
+    </tbody>
+</table>
+ 
+{% endblock  %}
+
