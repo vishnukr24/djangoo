@@ -3,6 +3,13 @@
 {% load static %}
 
 {% block content %}
-
+<h1><center>Register Your Doctor Here!</center></h1><br>
+<div class="center ml-5">
+ <form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+ </form>
+</div>
 {% endblock content %}
 

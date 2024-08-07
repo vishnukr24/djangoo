@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h2><center>Bookings</center></h2>
+<table border='3'>
+    <tr></tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Doctor</th>
+    <th>Booking Date</th> 
+</tr>
+{% for i in bookings %}
+<tr>
+    <td>{{ i.p_name }}</td>
+    <td>{{ i.p_phone }}</td>
+    <td>{{ i.p_email }}</td>
+    <td>{{ i.doc_name }}</td>
+    <td>{{ i.booking_date }}</td>
+       
+</tr>
+{% endfor %}
+</table>
+
+{% endblock content %}

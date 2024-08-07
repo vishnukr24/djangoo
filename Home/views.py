@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse, render
-from . models import department, Doctor
+from django.shortcuts import render, HttpResponse, render, redirect
+from . models import department, Doctor, Booking
+from . forms import BookingForm
 app_name = 'home'
 # Create your views here.
 def index(request):
@@ -44,7 +45,20 @@ def doctor(request):
 
 
 def booking(request):
-    doctor = {
-        'doctor':Doctor.objects.all()
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/home/booking/')
+    else:
+        form = BookingForm()
+    return render(request, 'booking.html', {
+        'form':form
+    })
+
+
+def bookings(request):
+    bookings={
+        'bookings':Booking.objects.all()
     }
-    return render (request, 'doctor.html', doctor)
+    return render(request, 'bookings.html', bookings)
