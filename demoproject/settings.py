@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Home',
     'imagegallery',
+    'logpage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

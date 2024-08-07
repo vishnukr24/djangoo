@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container ml-5">
+    Name: <input type="text" name='name' id='name' placeholder='Enter Your Name'><br>
+    Password: <input type="text" name='pass' id='pass' placeholder='Enter Your Password'><br>
+    <button type='submit'>Login</button>
+</div>
+
+{% endblock content %}
+

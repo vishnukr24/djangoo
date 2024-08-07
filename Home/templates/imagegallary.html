@@ -1,0 +1,33 @@
+
+{% load static %}
+
+{% block content %}
+<h3><center>Insert Images</center></h3><hr>
+<form action="" method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<hr>
+
+<h3><center>Uploaded Images</center></h3>
+<br>
+<hr>
+<table>
+{% for image in images %}
+    {% if forloop.first %}
+        <tr>
+            {% endif %}
+        <td>
+            <td>{{ image.caption }}
+                <br>
+            <img src="{{ image.image.url }}" alt="uploaded image">            
+        </td>
+        {% if forloop.counter|divisibleby:3 %}
+        </tr></tr>
+        {% endif %}
+        
+   
+{% endfor %}
+</table>
+{% endblock content %}

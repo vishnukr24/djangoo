@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h3><center>REGISTER PAGE</center></h3><br>
+<hr>
+
+<form action="." method="post">
+    {% csrf_token %}
+    <div class="container ml-5">
+    Name: <input type="text" name='name' id='name' placeholder='Enter Your Name'><br>
+    Phone: <input type="text" name='phone' id='phone' placeholder='Enter Your Phone'><br>
+    Email: <input type="text" name='email' id='email' placeholder='Enter Your Email'><br>
+    Password: <input type="text" name='pass' id='pass' placeholder='Enter Your Password'><br>
+    ConfirmPassword: <input type="text" name='cpass' id='cpass' placeholder='Confirm Password'><br>
+    <button type='submit'>Submit</button>
+</div>
+
+
+
+
+  {% endblock content %}
