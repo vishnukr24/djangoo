@@ -9,6 +9,16 @@
     Password: <input type="text" name='pass' id='pass' placeholder='Enter Your Password'><br>
     <button type='submit'>Login</button>
 </div>
+</form>
+
+{% for message in meessage %}
+<div class="alert alert-success">
+    <a href="a" data-dismiss='alert' class="close"></a>
+    {{ message }}
+</div>
+    
+{% endfor %}
+    
 
 {% endblock content %}
 
